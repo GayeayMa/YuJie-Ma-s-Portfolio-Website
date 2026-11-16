@@ -124,7 +124,7 @@
     if (focus) panel.querySelector("summary").focus({ preventScroll: true });
     panel.closest("article").scrollIntoView({ block: "start" });
   }
-  document.querySelectorAll(".case-cover, .case-title, .feature-image").forEach((link) => {
+  document.querySelectorAll("a.case-cover, .case-title, .feature-image").forEach((link) => {
     link.addEventListener("click", (event) => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       const panel = caseAt(link.hash);
@@ -184,6 +184,10 @@
   function move(event) {
     if (event.pointerType === 'touch' || !finePointer.matches || reduced.matches ||
         !intro.hidden || document.querySelector('dialog[open]')) return;
+    if (event.target.closest("video")) {
+      clearPointer();
+      return;
+    }
     const region = event.currentTarget;
     if (region.matches('.project:has(.case-body[open])') && !event.target.closest('.project-lead, summary')) {
       if (surface) clearPointer();
@@ -221,18 +225,4 @@
   reduced.addEventListener('change', clearPointer);
 
   runIntro();
-})();
-
-
-(() => {
-  const dialog = document.querySelector('#gameplay-film'), video = dialog.querySelector('video');
-  document.querySelector('.walkthrough-note').addEventListener('click', () => {
-    dialog.showModal(); video.play().catch(() => {});
-  });
-  dialog.querySelector('button').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', e => {
-    const r = dialog.getBoundingClientRect();
-    if (e.target === dialog && (e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom)) dialog.close();
-  });
-  dialog.addEventListener('close', () => { video.pause(); video.currentTime = 0; });
 })();
