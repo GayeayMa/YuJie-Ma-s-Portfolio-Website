@@ -9,9 +9,9 @@
   <link rel="preload" href="assets/clash-display-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/interactions.css">
-  <link rel="stylesheet" href="portfolio.css?v=statement3">
+  <link rel="stylesheet" href="portfolio.css?v=gameplay1">
   <script defer src="assets/anime.umd.min.js"></script>
-  <script defer src="portfolio.js"></script>
+  <script defer src="portfolio.js?v=gameplay1"></script>
   <script defer src="assets/interactions.js"></script>
   <script defer src="reader.js"></script>
   <script defer src="character-viewer.js"></script>
@@ -29,10 +29,6 @@
     <section class="hero wrap" aria-labelledby="name">
       <div class="artist-intro">
         <h1 id="name">YuJie Ma<span>.</span></h1>
-        <button class="statement-note" type="button" aria-haspopup="dialog" aria-controls="statement-film" aria-label="Play my personal statement, 3 minutes and 11 seconds">
-          <span class="note-still"><img src="media/statement-poster.jpg?v=2" alt=""><span class="note-play" aria-hidden="true">▶</span></span>
-          <span class="note-letter"><small>A NOTE FROM YUJIE</small><strong>My personal <br>statement.</strong><span class="note-duration">WATCH FILM <b>03:11</b></span></span>
-        </button>
         <p class="artist-description">I study sculpture and design games. I draw characters, build worlds and test rules around a table.</p>
       </div>
       <div class="screening">
@@ -61,7 +57,12 @@
         </div>
         <details id="nonsensians" class="case-body"><summary>Read case study <span class="plus" aria-hidden="true"></span></summary>
           <div class="case-content">
-            <div class="copy"><h4>Field notes from Earth</h4><p>What would a visiting researcher make of a coffee cup? To this intern, coffee is the substance that makes adult humans work. I built the game around those small misunderstandings, with familiar objects to investigate and a patrol to slip past.</p></div>
+            <div class="copy"><h4>Field notes from Earth</h4><p>What would a visiting researcher make of a coffee cup? To this intern, coffee is the substance that makes adult humans work. I built the game around those small misunderstandings, with familiar objects to investigate and a patrol to slip past.</p>
+              <button class="walkthrough-note" type="button" aria-haspopup="dialog" aria-controls="gameplay-film" aria-label="Play The Nonsensians gameplay walkthrough, 3 minutes and 11 seconds">
+          <span class="note-still"><img src="media/nonsensians-gameplay.jpg" alt=""><span class="note-play" aria-hidden="true">▶</span></span>
+          <span class="note-letter"><small>THE NONSENSIANS</small><strong>Gameplay<br>walkthrough</strong><span class="note-duration">PLAY VIDEO <b>03:11</b></span></span>
+        </button>
+            </div>
             <div class="world-reader office-gallery">
               <img id="office-art" src="media/office-01.webp" loading="lazy" alt="The alien moves through the office beneath a long table">
               <div class="choices" role="group" aria-label="Choose an office scene">
@@ -192,9 +193,9 @@
   </main>
   <footer id="contact"><div class="wrap foot-inner"><div><div class="case-type">Contact</div><a class="mail" href="mailto:1594250018@qq.com">Email YuJie <span aria-hidden="true">↗</span></a><p>1594250018@qq.com</p></div><a class="to-top" href="#top">Back to top ↑</a></div></footer>
   <div id="project-cursor" aria-hidden="true" hidden><img alt=""><span></span></div>
-  <dialog id="statement-film" aria-labelledby="statement-title">
-    <header><div><small>YUJIE MA · 03:11</small><h2 id="statement-title">My personal statement.</h2></div><button type="button" autofocus aria-label="Close personal statement">Close ×</button></header>
-    <video controls playsinline preload="none" poster="media/statement-poster.jpg?v=2" aria-label="YuJie Ma’s personal statement"><source src="media/personal-statement.mp4?v=2" type="video/mp4"></video>
+  <dialog id="gameplay-film" aria-labelledby="gameplay-title">
+    <header><div><small>THE NONSENSIANS · 03:11</small><h2 id="gameplay-title">Gameplay walkthrough</h2></div><button type="button" autofocus aria-label="Close gameplay walkthrough">Close ×</button></header>
+    <video controls playsinline preload="none" poster="media/nonsensians-gameplay.jpg" aria-label="The Nonsensians gameplay walkthrough"><source src="media/personal-statement.mp4?v=2" type="video/mp4"></video>
   </dialog>
   <dialog id="board-reader" aria-labelledby="reader-title">
     <div class="reader-shell">

@@ -225,8 +225,8 @@
 
 
 (() => {
-  const dialog = document.querySelector('#statement-film'), video = dialog.querySelector('video');
-  document.querySelector('.statement-note').addEventListener('click', () => {
+  const dialog = document.querySelector('#gameplay-film'), video = dialog.querySelector('video');
+  document.querySelector('.walkthrough-note').addEventListener('click', () => {
     dialog.showModal(); video.play().catch(() => {});
   });
   dialog.querySelector('button').addEventListener('click', () => dialog.close());
