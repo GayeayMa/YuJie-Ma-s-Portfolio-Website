@@ -223,3 +223,16 @@
   runIntro();
 })();
 
+
+(() => {
+  const dialog = document.querySelector('#statement-film'), video = dialog.querySelector('video');
+  document.querySelector('.statement-note').addEventListener('click', () => {
+    dialog.showModal(); video.play().catch(() => {});
+  });
+  dialog.querySelector('button').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', e => {
+    const r = dialog.getBoundingClientRect();
+    if (e.target === dialog && (e.clientX<r.left || e.clientX>r.right || e.clientY<r.top || e.clientY>r.bottom)) dialog.close();
+  });
+  dialog.addEventListener('close', () => { video.pause(); video.currentTime = 0; });
+})();

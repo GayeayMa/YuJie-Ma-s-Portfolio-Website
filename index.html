@@ -9,7 +9,7 @@
   <link rel="preload" href="assets/clash-display-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/interactions.css">
-  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="portfolio.css?v=statement3">
   <script defer src="assets/anime.umd.min.js"></script>
   <script defer src="portfolio.js"></script>
   <script defer src="assets/interactions.js"></script>
@@ -29,7 +29,11 @@
     <section class="hero wrap" aria-labelledby="name">
       <div class="artist-intro">
         <h1 id="name">YuJie Ma<span>.</span></h1>
-        <p>I study sculpture and design games. I draw characters, build worlds and test rules around a table.</p>
+        <button class="statement-note" type="button" aria-haspopup="dialog" aria-controls="statement-film" aria-label="Play my personal statement, 3 minutes and 11 seconds">
+          <span class="note-still"><img src="media/statement-poster.jpg?v=2" alt=""><span class="note-play" aria-hidden="true">▶</span></span>
+          <span class="note-letter"><small>A NOTE FROM YUJIE</small><strong>My personal <br>statement.</strong><span class="note-duration">WATCH FILM <b>03:11</b></span></span>
+        </button>
+        <p class="artist-description">I study sculpture and design games. I draw characters, build worlds and test rules around a table.</p>
       </div>
       <div class="screening">
         <a class="feature-image" id="feature-link" data-work="nonsensians" href="#nonsensians" aria-label="Open The Nonsensians case study">
@@ -70,9 +74,9 @@
             <section class="model-study" aria-label="Character models">
               <div class="model-tabs choices" role="group" aria-label="Choose a character model"><button type="button" data-character="alien" aria-pressed="true">Alien intern</button><button type="button" data-character="staff" aria-pressed="false">Iron Gentleman</button></div>
               <div class="model-stage">
-                <div id="character-turntable" role="img" aria-label="Alien intern, rotatable model" aria-describedby="model-hint" tabindex="0"></div>
+                <div class="turntable" role="img" aria-label="Alien intern, rotatable model" aria-describedby="office-hint" tabindex="0"></div>
               </div>
-              <div class="model-tools"><button type="button" id="orbit-left" aria-label="Rotate model left">←</button><p id="model-hint" aria-live="polite">Drag to rotate</p><button type="button" id="orbit-right" aria-label="Rotate model right">→</button></div>
+              <div class="model-tools"><button type="button" data-orbit="-1" aria-label="Rotate model left">←</button><p id="office-hint" aria-live="polite">Drag to rotate</p><button type="button" data-orbit="1" aria-label="Rotate model right">→</button></div>
             </section>
             <button type="button" class="read-board" data-board="the-nonsensians" aria-haspopup="dialog"><span class="read-circle" aria-hidden="true"><i></i></span><span class="read-label">Read the design board</span></button>
           </div>
@@ -82,13 +86,13 @@
         <div class="project-lead" data-work="karma">
         <div class="case-intro"><div class="case-type">Tabletop strategy</div><h3><a class="case-title" href="#karma">KARMA</a></h3>
         <p>What does it cost to change someone else’s fate? A board game about merit, chance and Chinese folklore.</p></div>
-        <a class="case-cover karma-cover" href="#karma" aria-label="Read the KARMA case study"><img src="media/table-test.webp" loading="lazy" alt="A player moving tokens on the printed KARMA board during a playtest"><div class="cover-hand" aria-hidden="true"><img src="media/pearl.webp" alt=""><img src="media/red-sun.webp" alt=""><img src="media/peachwood.webp" alt=""></div></a>
+        <a class="case-cover karma-cover" href="#karma" aria-label="Read the KARMA case study"><img src="media/karma-table.webp" loading="lazy" alt="A player holds yellow talisman cards beside the KARMA board and its coin tokens"></a>
         </div>
         <details id="karma" class="case-body"><summary>Read case study <span class="plus" aria-hidden="true"></span></summary>
           <div class="case-content"><div class="copy"><h4>A price for helping.</h4><p>Players move between villages, temples and mountains. An event can earn coins or merit and leave a debt of karma. Reach twelve merit to win, but the next celestial reckoning can change what your choices cost.</p><p>I gave each deck its own print language. Pink marks a shared omen, cream introduces a village encounter, and yellow puts a talisman in one player’s hand.</p></div>
           <div id="karma-deck"><img src="media/red-sun.webp" alt="Red Sun celestial card"></div>
           <div class="copy"><h4>What changed at the table</h4><p>In the first test, players kept forgetting the celestial card. I tied the draw to passing the Altar, where they already stopped to collect coins. Later I removed a shortcut that let players farm rewards and gave everyone two starting talismans. The fourth test ran from start to finish.</p></div>
-          <figure class="playtest"><img src="media/table-test.webp" loading="lazy" alt="Players testing the printed KARMA board with cards and yellow coin tokens"><figcaption>Playtest with the printed board and tokens</figcaption></figure>
+          <figure class="playtest"><img src="media/karma-playtest.webp" loading="lazy" alt="Players testing the printed KARMA board with cards and yellow coin tokens"><figcaption>Playtest with the printed board and tokens</figcaption></figure>
           <button type="button" class="read-board" data-board="karma" aria-haspopup="dialog"><span class="read-circle" aria-hidden="true"><i></i></span><span class="read-label">Read the game board</span></button></div>
         </details>
       </article>
@@ -100,7 +104,10 @@
         </div>
         <details id="park" class="case-body"><summary>Read case study <span class="plus" aria-hidden="true"></span></summary>
           <div class="case-content"><div class="copy"><h4>Making a place feel plush.</h4><p>I built the park independently. I modelled the rides and characters in Maya, painted selected textures in Substance Painter and assembled the environment in UE5. Felt, fur and rounded silhouettes gave the residents and the park a common language.</p></div>
-          <div class="resident-reader"><img id="resident-art" src="media/momo.webp" alt="Momo, a yellow plush creature with pink spots"><div><h5>Park residents</h5><div class="choices" role="group" aria-label="Meet a park resident"><button data-resident="0" aria-pressed="true">Momo</button><button data-resident="1" aria-pressed="false">Kiki</button><button data-resident="2" aria-pressed="false">Stella</button><button data-resident="3" aria-pressed="false">Mia</button><button data-resident="4" aria-pressed="false">Roy</button></div><p id="resident-caption" aria-live="polite">Momo worries about having fewer hands than everyone else. Almost nobody here has hands.</p></div></div>
+          <div class="resident-models"><div class="resident-reader"><img id="resident-art" src="media/momo.webp" alt="Momo, a yellow plush creature with pink spots"><div><h5>Park residents</h5><div class="choices" role="group" aria-label="Meet a park resident"><button data-resident="0" aria-pressed="true">Momo</button><button data-resident="1" aria-pressed="false">Kiki</button><button data-resident="2" aria-pressed="false">Stella</button><button data-resident="3" aria-pressed="false">Mia</button><button data-resident="4" aria-pressed="false">Roy</button></div><p id="resident-caption" aria-live="polite">Momo worries about having fewer hands than everyone else. Almost nobody here has hands.</p></div></div><section class="model-study" aria-label="Park resident model preview"><div class="model-stage">
+                <div class="turntable" role="img" aria-label="Momo, rotatable model" aria-describedby="park-hint" tabindex="0"></div>
+              </div>
+              <div class="model-tools"><button type="button" data-orbit="-1" aria-label="Rotate model left">←</button><p id="park-hint" aria-live="polite">Drag to rotate</p><button type="button" data-orbit="1" aria-label="Rotate model right">→</button></div></section></div>
           <button type="button" class="read-board" data-board="puffy-park" aria-haspopup="dialog"><span class="read-circle" aria-hidden="true"><i></i></span><span class="read-label">Read the environment board</span></button></div>
         </details>
       </article>
@@ -185,6 +192,10 @@
   </main>
   <footer id="contact"><div class="wrap foot-inner"><div><div class="case-type">Contact</div><a class="mail" href="mailto:1594250018@qq.com">Email YuJie <span aria-hidden="true">↗</span></a><p>1594250018@qq.com</p></div><a class="to-top" href="#top">Back to top ↑</a></div></footer>
   <div id="project-cursor" aria-hidden="true" hidden><img alt=""><span></span></div>
+  <dialog id="statement-film" aria-labelledby="statement-title">
+    <header><div><small>YUJIE MA · 03:11</small><h2 id="statement-title">My personal statement.</h2></div><button type="button" autofocus aria-label="Close personal statement">Close ×</button></header>
+    <video controls playsinline preload="none" poster="media/statement-poster.jpg?v=2" aria-label="YuJie Ma’s personal statement"><source src="media/personal-statement.mp4?v=2" type="video/mp4"></video>
+  </dialog>
   <dialog id="board-reader" aria-labelledby="reader-title">
     <div class="reader-shell">
       <header class="reader-head"><div><p class="reader-type">Portfolio board</p><h2 id="reader-title"></h2></div><button type="button" id="reader-close" autofocus>Close <span aria-hidden="true">×</span></button></header>

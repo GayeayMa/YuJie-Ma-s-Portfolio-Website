@@ -1,16 +1,19 @@
 (() => {
-  const panel = document.getElementById('nonsensians');
-  const stage = panel.querySelector('.model-stage');
-  const turntable = document.getElementById('character-turntable');
-  const hint = document.getElementById('model-hint');
-  const reference = document.getElementById('character-reference');
-  const tabs = [...panel.querySelectorAll('[data-character]')];
+  for (const study of document.querySelectorAll('.model-study')) {
+  const panel = study.closest('details');
+  const stage = study.querySelector('.model-stage');
+  const turntable = study.querySelector('.turntable');
+  const hint = study.querySelector('.model-tools p');
+  const reference = panel.querySelector('#character-reference');
+  const tabs = [...panel.querySelectorAll('[data-character],[data-resident]')];
   const characters = {
     alien: {name: 'Alien intern', description: 'The alien’s blue suit and green eyes in YuJie’s colour study'},
     staff: {name: 'Iron Gentleman', description: 'The patrol guard’s bowler hat and black gloves in YuJie’s colour study'}
   };
 
-  let character = 'alien';
+  const keyFor = b => b.dataset.character || ['momo','kiki','stella','mia','roy'][Number(b.dataset.resident)];
+  for (const b of tabs) if (!characters[keyFor(b)]) characters[keyFor(b)] = {name:b.textContent.trim()};
+  let character = keyFor(tabs[0]);
   let frame = 0;
   let viewer;
   let library;
@@ -53,7 +56,7 @@
     if (!await loadViewer() || request !== revision || !panel.open) return;
     const model = document.createElement('model-viewer');
     viewer = model;
-    model.alt = characters[character].name + ', original untextured character model';
+    model.alt = characters[character].name + ', 3D character model';
     model.setAttribute('camera-controls', '');
     model.setAttribute('disable-pan', '');
     model.setAttribute('touch-action', 'pan-y');
@@ -90,16 +93,16 @@
   }
 
   tabs.forEach(button => button.addEventListener('click', () => {
-    if (button.dataset.character === character) return;
-    character = button.dataset.character;
+    if (keyFor(button) === character) return;
+    character = keyFor(button);
     tabs.forEach(tab => tab.setAttribute('aria-pressed', String(tab === button)));
-    reference.src = 'media/' + character + '-reference.webp';
-    reference.alt = characters[character].description;
+    if (reference) reference.src = 'media/' + character + '-reference.webp';
+    if (reference) reference.alt = characters[character].description;
     displayCharacter();
   }));
 
-  document.getElementById('orbit-left').addEventListener('click', () => rotate(-1));
-  document.getElementById('orbit-right').addEventListener('click', () => rotate(1));
+  study.querySelector('[data-orbit="-1"]').addEventListener('click', () => rotate(-1));
+  study.querySelector('[data-orbit="1"]').addEventListener('click', () => rotate(1));
   turntable.addEventListener('keydown', event => {
     if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
     event.preventDefault();
@@ -125,4 +128,5 @@
     }
   });
   if (panel.open) displayCharacter();
+  }
 })();

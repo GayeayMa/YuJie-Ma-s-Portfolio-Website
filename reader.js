@@ -3,7 +3,7 @@
   const imageBoards = {cypher: [3000, 2160]};
   const boards = {
     cypher: ['CYPHER', ['Game jam design board']],
-    'the-nonsensians': ['The Nonsensians', ['Cover', 'Inspiration and design goal', 'Game flow and characters', 'Research specimens', 'Character design', 'Level process and gameplay', 'Environment models and playtests']],
+    'the-nonsensians': ['The Nonsensians', ['Cover', 'Inspiration and design goal', 'Game flow and characters', 'Research specimens', 'Character design', 'Level process and gameplay', 'Environment models and playtests', 'Portfolio links']],
     'the-worker': ['The Worker.exe', ['Cover', 'Concept and game flow', 'Character progression', 'Pixel world', 'The Fragmented Core', 'Companion abilities', 'Drafts and iteration']],
     'karma': ['KARMA', ['Cover', 'Folklore research', 'Rules and setup', 'Card anatomy', 'Board iterations', 'Playtests', 'Full card collection']],
     'puffy-park': ['Puffy Park', ['Cover', 'Building the park', 'Park residents', 'Rides and attractions', 'Stalls and balloons', 'Modelling process']],
