@@ -363,3 +363,21 @@ body.reading-board{overflow:hidden}
 .model-study .turntable:active{cursor:grabbing}.turntable:focus-visible{outline:3px solid var(--pink);outline-offset:-4px}
 @media(max-width:700px){.resident-models{grid-template-columns:1fr;gap:20px}}
 
+
+.game-download {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  min-height: 44px;
+  color: var(--preview-action);
+  text-decoration: none;
+}
+.game-download strong, .game-download small { display: block; }
+.game-download strong { font-size: 1.05rem; }
+.game-download small { margin-top: .12em; font-size: .9rem; text-decoration: underline; text-underline-offset: .18em; }
+.download-icon { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border: 1px solid currentColor; border-radius: 50%; font-size: 1.3rem; }
+.game-download:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+@media (prefers-reduced-motion: no-preference) {
+  .download-icon { transition: transform .18s ease-out; }
+  .game-download:is(:hover, :focus-visible) .download-icon { transform: translateY(3px); }
+}
