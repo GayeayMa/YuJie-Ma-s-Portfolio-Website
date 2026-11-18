@@ -365,7 +365,9 @@ body.reading-board{overflow:hidden}
 
 
 .game-download {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
+  margin-block-start: clamp(24px, 2.6vw, 42px);
   align-items: center;
   gap: .7rem;
   min-height: 44px;
